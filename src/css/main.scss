@@ -1,1 +1,231 @@
-/* Your SCSS here. */
+// Disclaimer: The code below was mostly generated using ChatGPT.
+
+// Variables
+$primary: #008080;
+$dark: #222;
+$light: #f5f5f5;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// General Styles
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.stripe {
+  background: $light;
+}
+
+// Navbar
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $dark;
+  transition: all 0.3s;
+  z-index: 1000;
+  padding: 25px;
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 15px;
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        &.active {
+          border-bottom: 2px solid $primary;
+        }
+      }
+    }
+  }
+
+  &.small {
+    padding: 5px;
+    nav ul li .nav-link {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Home Section
+.full-screen {
+  height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+  background: $primary;
+  color: white;
+}
+
+.center-content {
+  @include flex-center;
+  text-align: center;
+}
+
+// Carousel
+.carousel {
+  position: relative;
+  width: 70%;
+  margin: auto;
+  .slides {
+    position: relative;
+    overflow: hidden;
+    .slide {
+      display: none;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .active {
+      display: block;
+    }
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .prev { left: 0; }
+  .next { right: 0; }
+}
+
+// Portfolio grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  .item {
+    background: $primary;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    img {
+      width: 100%;
+      display: block;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Background Image
+.bg-fixed {
+  background-image: url("../assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; // ✅ this locks it in place
+  color: white;
+  height: 400px; // give it enough height to notice the effect
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Modal
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  @include flex-center;
+  .modal-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    position: relative;
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
+
+// Video
+video {
+  max-width: 100%;
+}
+
+// Socials
+.socials a {
+  margin: 0 10px;
+  font-size: 1.8rem;
+  color: $dark;
+  transition: color 0.3s;
+  text-decoration: none;   // ✅ removes the underline
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// Animations
+.fade-in {
+  animation: fade 2s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.full-screen.hero {
+  height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+  background: url("../assets/image.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+
+  h1 {
+    font-size: 4rem;   // Bigger title
+    font-weight: 900;  // Bold
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 2rem; // Bigger subtitle
+    font-weight: 900;
+  }
+}
+
+footer {
+  background: $dark;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: lighten($light, 20%);
+    margin-top: 10px;
+  }
+}

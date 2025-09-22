@@ -1,13 +1,134 @@
+<!-- Disclaimer: The code below was mostly generated using ChatGPT. -->
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Photography Portfolio</title>
+  <link rel="stylesheet" href="css/main.scss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#video" class="nav-link">Video</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="full-screen hero center-content">
+    <h1 class="fade-in">Mohammed Alsaad</h1>
+    <p class="fade-in">Capturing stories through the lens, one moment at a time.</p>
+  </section>
+
+    <!-- About Section -->
+    <section id="about" class="stripe">
+    <h2>About Me</h2>
+    <p><i class="fas fa-camera"></i> This website is a demo photography portfolio created for a class project. 
+        The text and images are placeholders to demonstrate web design features, 
+        and do not represent a real photography business. 
+    </p>
+    <p><i class="fas fa-mountain"></i> In a real portfolio, this section would describe my passion for capturing 
+        landscapes, portraits, and travel moments. 
+    </p>
+    <p><i class="fas fa-users"></i> Photography is about telling people’s stories and preserving memories. 
+    </p>
+
+    <!-- Social Media Icons -->
+    <div class="socials">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        </a>
+    </div>
+    </section>
+
+
+  <!-- Carousel Section -->
+  <section id="carousel" class="stripe">
+    <h2>Featured Shots</h2>
+    <div class="carousel">
+      <div class="slides">
+        <div class="slide active"><img src="assets/slide1.jpg" alt="Landscape"></div>
+        <div class="slide"><img src="assets/slide2.jpg" alt="Portrait"></div>
+        <div class="slide"><img src="assets/slide3.jpg" alt="Cityscape"></div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Portfolio Section (Multi-column + Modal) -->
+  <section id="portfolio" class="stripe">
+    <h2>Behind the Scenes</h2>
+    <div class="grid">
+      <div class="item" data-modal="modal1"><img src="assets/project-a.jpg" alt="Nature"></div>
+      <div class="item" data-modal="modal2"><img src="assets/project-b.jpg" alt="Wedding"></div>
+      <div class="item" data-modal="modal3"><img src="assets/project-c.jpg" alt="Travel"></div>
+    </div>
+  </section>
+
+  <!-- Background Image Section -->
+  <section id="background" class="bg-fixed center-content">
+    <h2>Every Picture Tells a Story</h2>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video" class="stripe">
+    <h2>Breathtaking Video</h2>
+    <video controls width="600">
+      <source src="assets/sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mohammed Alsaad Photography</p>
+    <p class="disclaimer">
+      Disclaimer: This is a fictional photography portfolio created for a class project. 
+      The photos used are not mine and are for demonstration purposes only.
+    </p>
+  </footer>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Programming Workspace</h3>
+      <p>A look into my development setup and workflow environment.</p>
+  </div>
+  </div>
+
+  <div id="modal2" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Food Photography</h3>
+      <p>Capturing everyday moments like fresh popcorn with a creative eye.</p>
+  </div>
+  </div>
+
+  <div id="modal3" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Developer at Work</h3>
+      <p>Focused coding moments, highlighting the process behind the screen.</p>
+  </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
 </html>
